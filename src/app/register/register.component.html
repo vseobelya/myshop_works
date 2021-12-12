@@ -1,12 +1,12 @@
 <div>
     <h1 >Регистрация</h1>
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
     <table>
 
       <tr>
         <td><label>Логин</label></td>
         <td>
-          <input type="text" formControlName="login" [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+          <input type="text" formControlName="login"/>
         </td>
         <td>
           <div *ngIf="submitted && f.login.errors">
@@ -18,7 +18,7 @@
       <tr>
         <td><label>Пароль</label></td>
         <td>
-          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <input type="password" formControlName="password"/>
         </td>
         <td>
           <div *ngIf="submitted && f.password.errors">
@@ -30,7 +30,7 @@
       <tr>
         <td><label>Имя</label></td>
         <td>
-          <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+          <input type="text" formControlName="firstname"/>
         </td>
         <td>
           <div *ngIf="submitted && f.firstname.errors">
@@ -70,6 +70,6 @@
        <!-- </div> -->
 
    <!-- </div> -->
-   <button type="submit">Submit</button>
+   <button type="submit">Регистрация</button>
   </form>
   </div>

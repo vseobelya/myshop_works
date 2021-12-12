@@ -1,10 +1,12 @@
 <div>
   <table>
     <tr>
-      <td><a [routerLink]="['']">Главная</a></td>
-      <td><a [routerLink]="['/goods']">Каталог</a></td>
-      <td><a [routerLink]="['/register']">Регистрация</a></td>
-      <td><a [routerLink]="['/cart']">Корзина</a></td>
+      <td><a [routerLink]="['']" routerLinkActive="active">Главная</a></td>
+      <td><a [routerLink]="['/goods']" routerLinkActive="active">Каталог</a></td>
+      <td><a [routerLink]="['/register']" *ngIf="loginbtn" routerLinkActive="active">Регистрация</a></td>
+      <td><a [routerLink]="['/login']" *ngIf="loginbtn" routerLinkActive="active">Авторизация</a></td>
+      <td><a [routerLink]="['/cart']" *ngIf="logoutbtn" routerLinkActive="active">Корзина</a></td>
+      <td><button type="button" *ngIf="logoutbtn"(click)="logout()">Выйти</button></td>
     </tr>
   </table>
 </div>

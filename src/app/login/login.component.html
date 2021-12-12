@@ -1,0 +1,32 @@
+<div>
+    <h1 >Авторизация</h1>
+  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+    <table>
+      <tr>
+        <td><label>Логин</label></td>
+        <td>
+          <input type="text" formControlName="login"/>
+        </td>
+        <td>
+          <div *ngIf="submitted && f.login.errors">
+                <div *ngIf="f.login.errors.required">Введите логин</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Пароль</label></td>
+        <td>
+          <input type="password" formControlName="password"/>
+        </td>
+        <td>
+          <div *ngIf="submitted && f.password.errors">
+             <div *ngIf="f.password.errors.required">Введите пароль</div>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+   <button type="submit">Войти</button>
+  </form>
+  </div>
