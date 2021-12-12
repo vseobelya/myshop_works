@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  goodData:any;
+  userData:any;
 
   constructor(private http:HttpClient) { }
 
@@ -16,4 +16,13 @@ export class HttpService {
 
             return this.http.get('http://localhost/goods.php');
         }
+
+  //add new user
+    public adduser(userData: any)
+      {
+        return this.http.post('http://localhost/add_users.php/', userData).subscribe();
+        // .subscribe((res: any) => {
+        //   this.getusers();
+      // });
+    }
 }

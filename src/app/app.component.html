@@ -1,5 +1,11 @@
 <div>
-  <a [routerLink]="['']">Главная</a>
-  <a [routerLink]="['/goods']">Каталог</a>
+  <table>
+    <tr>
+      <td><a [routerLink]="['']">Главная</a></td>
+      <td><a [routerLink]="['/goods']">Каталог</a></td>
+      <td><a [routerLink]="['/register']">Регистрация</a></td>
+      <td><a [routerLink]="['/cart']">Корзина</a></td>
+    </tr>
+  </table>
 </div>
 <router-outlet></router-outlet>

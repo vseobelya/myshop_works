@@ -1,0 +1,75 @@
+<div>
+    <h1 >Регистрация</h1>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <table>
+
+      <tr>
+        <td><label>Логин</label></td>
+        <td>
+          <input type="text" formControlName="login" [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+        </td>
+        <td>
+          <div *ngIf="submitted && f.login.errors">
+                <div *ngIf="f.login.errors.required">Введите логин</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Пароль</label></td>
+        <td>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        </td>
+        <td>
+          <div *ngIf="submitted && f.password.errors">
+             <div *ngIf="f.password.errors.required">Введите пароль</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Имя</label></td>
+        <td>
+          <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+        </td>
+        <td>
+          <div *ngIf="submitted && f.firstname.errors">
+             <div *ngIf="f.firstname.errors.required">Введите имя</div>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+    <!-- <div> -->
+       <!-- <div>
+          <div>
+                <label>Логин</label>
+                <input type="text" formControlName="login" [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+                <div *ngIf="submitted && f.login.errors">
+                      <div *ngIf="f.login.errors.required">Введите логин</div>
+                </div>
+             </div>
+       </div> -->
+       <!-- <div>
+          <div>
+             <label>Пароль</label>
+             <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+             <div *ngIf="submitted && f.password.errors">
+                <div *ngIf="f.password.errors.required">Введите пароль</div>
+             </div>
+          </div>
+       </div>
+       <div> -->
+          <!-- <div>
+             <label>Имя</label>
+             <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+             <div *ngIf="submitted && f.firstname.errors">
+                <div *ngIf="f.firstname.errors.required">Введите имя</div>
+             </div>
+          </div> -->
+       <!-- </div> -->
+
+   <!-- </div> -->
+   <button type="submit">Submit</button>
+  </form>
+  </div>
